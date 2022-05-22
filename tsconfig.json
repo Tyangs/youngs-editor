@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "module": "esnext",
+    "target": "es2017",
+    "resolveJsonModule": true,
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "paths": {
+      "@youngs-editor/shared": ["packages/shared/src"]
+    }
+  },
+  "include": ["apps/**/src/**/*", "packages/**/src/**/*", "apps/**/src/**/*.vue"]
+}

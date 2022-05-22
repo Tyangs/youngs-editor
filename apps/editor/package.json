@@ -1,0 +1,17 @@
+{
+  "name": "@youngs-editor/editor",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "vue": "^3.2.35",
+    "@youngs-editor/shared": "1.0.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^2.3.3"
+  }
+}

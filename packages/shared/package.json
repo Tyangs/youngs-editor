@@ -1,0 +1,22 @@
+{
+  "name": "@youngs-editor/shared",
+  "version": "1.0.0",
+  "private": "true",
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "rm -rf dist && rollup --config rollup.config.js --watch",
+    "build": "rm -rf dist && rollup --config rollup.config.js"
+  },
+  "license": "MIT",
+  "author": "t.yang"
+}
