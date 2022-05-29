@@ -8,7 +8,13 @@
   },
   "license": "MIT",
   "dependencies": {
+    "@chakra-ui/react": "^2.1.2",
+    "@emotion/react": "^11",
+    "@emotion/styled": "^11",
+    "@youngs-editor/image": "1.0.0",
     "@youngs-editor/shared": "1.0.0",
-    "@youngs-editor/image": "1.0.0"
+    "chakra-ui": "^0.3.9",
+    "framer-motion": "^6",
+    "react-router-dom": "^6.3.0"
   }
 }
