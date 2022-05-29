@@ -7,9 +7,14 @@ export interface IMaterialData {
 	source: string;
 }
 
+type MaterialType = 'component' | 'template';
+
 export interface IMaterial extends IMaterialData {
 	id: string;
-	type: string;
+	name: string;
+	label: string;
+	thumbnail: string;
+	type: MaterialType;
 	category: ICategory;
 }
 

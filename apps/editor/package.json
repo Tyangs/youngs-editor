@@ -8,6 +8,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@youngs-editor/shared": "1.0.0"
+    "@youngs-editor/shared": "1.0.0",
+    "@youngs-editor/image": "1.0.0"
   }
 }
