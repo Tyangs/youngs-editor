@@ -16,7 +16,10 @@
   ],
   "scripts": {
     "dev": "rm -rf dist && rollup --config rollup.config.js --watch",
-    "build": "rm -rf dist && rollup --config rollup.config.js"
+    "build": "rm -rf dist && rollup --config rollup.config.js",
+    "test": "vitest run",
+    "test:watch": "vitest watch",
+    "coverage": "vitest run --coverage"
   },
   "license": "MIT",
   "author": "t.yang"
