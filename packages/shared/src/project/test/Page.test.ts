@@ -1,7 +1,4 @@
-import { describe, expect, it } from 'vitest';
-
 import { Page } from '../Page';
-import { PageElement } from './../PageElement';
 import { IPage } from './../types';
 
 describe('class Page', () => {
@@ -13,12 +10,12 @@ describe('class Page', () => {
 		expect(description).toBe('New Page Description.');
 		expect(elements).toHaveLength(0);
 		expect(page.getJSON()).toMatchInlineSnapshot(`
-			{
-			  "description": "New Page Description.",
-			  "elements": [],
-			  "name": "New Page",
-			}
-		`);
+		Object {
+		  "description": "New Page Description.",
+		  "elements": Array [],
+		  "name": "New Page",
+		}
+	`);
 	});
 
 	it('Page create with page param', () => {

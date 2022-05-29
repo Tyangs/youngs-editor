@@ -17,10 +17,15 @@
   "scripts": {
     "dev": "rm -rf dist && rollup --config rollup.config.js --watch",
     "build": "rm -rf dist && rollup --config rollup.config.js",
-    "test": "vitest run",
-    "test:watch": "vitest watch",
-    "coverage": "vitest run --coverage"
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "coverage": "jest --coverage"
   },
   "license": "MIT",
-  "author": "t.yang"
+  "author": "t.yang",
+  "devDependencies": {
+    "@babel/core": "^7.18.2",
+    "@babel/preset-env": "^7.18.2",
+    "@babel/preset-typescript": "^7.17.12"
+  }
 }

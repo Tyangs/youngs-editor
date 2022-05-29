@@ -1,5 +1,3 @@
-import { describe, expect, it } from 'vitest';
-
 import { uuid } from './../../utils';
 import { PageElement } from './../index';
 import { IElement } from './../types';

@@ -4,10 +4,11 @@
     "target": "es2017",
     "resolveJsonModule": true,
     "moduleResolution": "node",
+    "jsx": "react",
     "baseUrl": ".",
     "paths": {
       "@youngs-editor/shared": ["packages/shared/src"]
     }
   },
-  "include": ["apps/**/src/**/*", "packages/**/src/**/*", "apps/**/src/**/*.vue"]
+  "include": ["apps/**/src/**/*", "packages/**/src/**/*", "apps/**/src/**/*.tsx"]
 }

@@ -1,5 +1,3 @@
-import { describe, expect, it } from 'vitest';
-
 import { Project } from '../Project';
 import { IProject } from './../types';
 
@@ -12,18 +10,18 @@ describe('class Project', () => {
 		expect(description).toBe('New Project Description.');
 		expect(pages).toHaveLength(1);
 		expect(project.getJSON()).toMatchInlineSnapshot(`
-			{
-			  "description": "New Project Description.",
-			  "name": "New Project",
-			  "pages": [
-			    {
-			      "description": "New Page Description.",
-			      "elements": [],
-			      "name": "New Page",
-			    },
-			  ],
-			}
-		`);
+		Object {
+		  "description": "New Project Description.",
+		  "name": "New Project",
+		  "pages": Array [
+		    Object {
+		      "description": "New Page Description.",
+		      "elements": Array [],
+		      "name": "New Page",
+		    },
+		  ],
+		}
+	`);
 	});
 
 	it('Project create without project param', () => {

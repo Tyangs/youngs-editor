@@ -8,10 +8,6 @@
   },
   "license": "MIT",
   "dependencies": {
-    "vue": "^3.2.35",
     "@youngs-editor/shared": "1.0.0"
-  },
-  "devDependencies": {
-    "@vitejs/plugin-vue": "^2.3.3"
   }
 }
