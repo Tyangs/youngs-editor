@@ -13,15 +13,17 @@ const EditorLayout = (props: IEditorLayoutProps) => {
 
 	return (
 		<VStack spacing={0}>
-			{header}
+			<Box w="100%" h="72px" borderBottom="1px" borderColor="gray.200" bg="gray.100">
+				{header}
+			</Box>
 			<HStack w="100%" h="calc(100vh - 80px)" alignItems="flex-start">
-				<Box w="300px" h="100%" boxShadow="2px 0 20px 0 rgb(0 0 0 / 10%)">
+				<Box h="100%" boxShadow="2px 0 20px 0 rgb(0 0 0 / 10%)">
 					{material}
 				</Box>
-				<Box flex="1" h="100%">
+				<Box flex="1" h="100%" bgColor={'gray.50'}>
 					{preview}
 				</Box>
-				<Box w="200px" h="100%" bg="blue.50" boxShadow="-2px 0 20px 0 rgb(0 0 0 / 10%)">
+				<Box h="100%" bg="blue.50" boxShadow="-2px 0 20px 0 rgb(0 0 0 / 10%)">
 					{property}
 				</Box>
 			</HStack>

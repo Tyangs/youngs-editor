@@ -1,5 +1,8 @@
-import { Tab, TabList, TabPanel, TabPanels, Tabs } from '@chakra-ui/react';
-import React from 'react';
+import { Box, Tab, TabList, TabPanel, TabPanels, Tabs } from '@chakra-ui/react';
+import classNames from 'classnames';
+import React, { useState } from 'react';
+
+import styles from './VerticalTabs.module.scss';
 
 interface TabData {
 	tab: React.ReactNode;
@@ -12,8 +15,21 @@ interface IVerticalTabsProps {
 
 const VerticalTabs = (props: IVerticalTabsProps) => {
 	const { tabData } = props;
+	const [isFold, setIsFold] = useState<boolean>(false);
+
+	const togglePanelFold = () => setIsFold(isFold => !isFold);
+
+	const panelCls = classNames(styles['panel'], {
+		[styles['panel--fold']]: isFold,
+	});
+
 	return (
-		<Tabs orientation="vertical" h="calc(100vh - 80px)">
+		<Tabs
+			orientation="vertical"
+			h="calc(100vh - 80px)"
+			position="relative"
+			className={styles['vertical-tabs']}
+		>
 			<TabList borderRightColor={'gray.100'} borderRightWidth={1}>
 				{tabData.map(item => (
 					<Tab
@@ -30,11 +46,22 @@ const VerticalTabs = (props: IVerticalTabsProps) => {
 				))}
 			</TabList>
 
-			<TabPanels>
+			<TabPanels className={panelCls}>
 				{tabData.map(item => (
-					<TabPanel key={item.panel}>{item.panel}</TabPanel>
+					<TabPanel key={item.panel}>{!isFold && item.panel}</TabPanel>
 				))}
 			</TabPanels>
+			<Box
+				position="absolute"
+				w="16px"
+				h="50px"
+				top="50%"
+				right="-15px"
+				transform="translateY(-50%)"
+				cursor="pointer"
+				className={styles['arrow']}
+				onClick={togglePanelFold}
+			/>
 		</Tabs>
 	);
 };
