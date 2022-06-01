@@ -2,22 +2,32 @@ import { Box, Tab, TabList, TabPanel, TabPanels, Tabs } from '@chakra-ui/react';
 import classNames from 'classnames';
 import React, { useState } from 'react';
 
-import styles from './VerticalTabs.module.scss';
+import styles from './MaterialVerticalTabs.module.scss';
 
 interface TabData {
 	tab: React.ReactNode;
 	panel: React.ReactNode;
 }
 
-interface IVerticalTabsProps {
+interface IMaterialVerticalTabsProps {
 	tabData: TabData[];
 }
 
-const VerticalTabs = (props: IVerticalTabsProps) => {
+const MaterialVerticalTabs = (props: IMaterialVerticalTabsProps) => {
 	const { tabData } = props;
 	const [isFold, setIsFold] = useState<boolean>(false);
+	const [panelActive, setPanelActive] = useState<boolean>(true);
 
-	const togglePanelFold = () => setIsFold(isFold => !isFold);
+	const togglePanelFold = () => {
+		if (isFold) {
+			setTimeout(() => {
+				setPanelActive(true);
+			}, 100);
+		} else {
+			setPanelActive(false);
+		}
+		setIsFold(isFold => !isFold);
+	};
 
 	const panelCls = classNames(styles['panel'], {
 		[styles['panel--fold']]: isFold,
@@ -28,19 +38,11 @@ const VerticalTabs = (props: IVerticalTabsProps) => {
 			orientation="vertical"
 			h="calc(100vh - 80px)"
 			position="relative"
-			className={styles['vertical-tabs']}
+			className={styles['material-vertical-tabs']}
 		>
 			<TabList borderRightColor={'gray.100'} borderRightWidth={1}>
 				{tabData.map(item => (
-					<Tab
-						key={item.tab}
-						_selected={{
-							bgColor: 'gray.50',
-							boxShadow: 'none',
-							borderLeftColor: 'gray.500',
-							borderLeftWidth: '4px',
-						}}
-					>
+					<Tab key={item.tab} _focus={{ boxShadow: 'none' }}>
 						{item.tab}
 					</Tab>
 				))}
@@ -48,7 +50,7 @@ const VerticalTabs = (props: IVerticalTabsProps) => {
 
 			<TabPanels className={panelCls}>
 				{tabData.map(item => (
-					<TabPanel key={item.panel}>{!isFold && item.panel}</TabPanel>
+					<TabPanel key={item.panel}>{panelActive && item.panel}</TabPanel>
 				))}
 			</TabPanels>
 			<Box
@@ -66,4 +68,4 @@ const VerticalTabs = (props: IVerticalTabsProps) => {
 	);
 };
 
-export default VerticalTabs;
+export default MaterialVerticalTabs;

@@ -2,8 +2,8 @@ import { Box } from '@chakra-ui/react';
 import React from 'react';
 
 import Image from '@/assets/thumbnail/image.svg';
+import VerticalTabs from '@/components/MaterialVerticalTabs';
 import Thumbnail from '@/components/Thumbnail';
-import VerticalTabs from '@/components/VerticalTabs';
 
 const tabData = [
 	{
