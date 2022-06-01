@@ -10,7 +10,7 @@ const Thumbnail = (props: IThumbnailProps) => {
 	const { src, alt } = props;
 
 	return (
-		<Box w="32" cursor="pointer">
+		<Box w="20" cursor="pointer">
 			<Image src={src} alt={alt} />
 		</Box>
 	);

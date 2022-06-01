@@ -8,7 +8,7 @@ import Thumbnail from '@/components/Thumbnail';
 const tabData = [
 	{
 		tab: '组件',
-		panel: '组件',
+		panel: <Thumbnail src={Image} />,
 	},
 	{
 		tab: '大纲',
@@ -24,7 +24,7 @@ const Material = () => {
 	return (
 		<Box>
 			<VerticalTabs tabData={tabData} />
-			{/* <Thumbnail src={Image} /> */}
+			<Thumbnail src={Image} />
 		</Box>
 	);
 };

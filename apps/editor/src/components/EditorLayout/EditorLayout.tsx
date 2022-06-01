@@ -20,7 +20,7 @@ const EditorLayout = (props: IEditorLayoutProps) => {
 				<Box h="100%" boxShadow="2px 0 20px 0 rgb(0 0 0 / 10%)">
 					{material}
 				</Box>
-				<Box flex="1" h="100%">
+				<Box flex="1" h="100%" bgColor="whiteAlpha.50">
 					{preview}
 				</Box>
 				<Box h="100%" boxShadow="-2px 0 20px 0 rgb(0 0 0 / 10%)">
